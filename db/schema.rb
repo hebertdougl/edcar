@@ -11,7 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107011918) do
+ActiveRecord::Schema.define(version: 20150107023028) do
+
+  create_table "clientes", force: true do |t|
+    t.string   "nome_cliente"
+    t.string   "cpf"
+    t.string   "rg"
+    t.string   "telefone_celular"
+    t.string   "telefone_residencial"
+    t.string   "email"
+    t.string   "endereco"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "marca_veiculos", force: true do |t|
+    t.string   "nome"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ordem_servicos", force: true do |t|
+    t.string   "numero"
+    t.string   "data"
+    t.string   "valor"
+    t.string   "veiculo"
+    t.string   "placa"
+    t.string   "quilometragem"
+    t.string   "garantia"
+    t.string   "pecas"
+    t.string   "descricao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "veiculos", force: true do |t|
     t.string   "placa"
