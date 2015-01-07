@@ -1,37 +1,62 @@
-<%= form_for(@veiculo) do |f| %>
-  <% if @veiculo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@veiculo.errors.count, "error") %> prohibited this veiculo from being saved:</h2>
+<%= form_for @veiculo, :html => { :class => "form-horizontal veiculo" } do |f| %>
 
-      <ul>
-      <% @veiculo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @veiculo.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@veiculo.errors.count, "error") %> prohibited this veiculo from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @veiculo.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :placa %><br>
-    <%= f.text_field :placa %>
+  <div class="form-group">
+    <%= f.label :placa, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :placa, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:placa) %>
   </div>
-  <div class="field">
-    <%= f.label :marca %><br>
-    <%= f.text_field :marca %>
+  <div class="form-group">
+    <%= f.label :marca, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :marca, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:marca) %>
   </div>
-  <div class="field">
-    <%= f.label :modelo %><br>
-    <%= f.text_field :modelo %>
+  <div class="form-group">
+    <%= f.label :modelo, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :modelo, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:modelo) %>
   </div>
-  <div class="field">
-    <%= f.label :ano %><br>
-    <%= f.date_select :ano %>
+  <div class="form-group">
+    <%= f.label :ano, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :ano, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:ano) %>
   </div>
-  <div class="field">
-    <%= f.label :quilometragem %><br>
-    <%= f.text_field :quilometragem %>
+  <div class="form-group">
+    <%= f.label :quilometragem, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :quilometragem, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:quilometragem) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                veiculos_path, :class => 'btn btn-default' %>
+    </div>
   </div>
+
 <% end %>

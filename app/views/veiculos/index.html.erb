@@ -1,33 +1,44 @@
-<h1>Listing veiculos</h1>
-
-<table>
+<%- model_class = Veiculo -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Placa</th>
-      <th>Marca</th>
-      <th>Modelo</th>
-      <th>Ano</th>
-      <th>Quilometragem</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:placa) %></th>
+      <th><%= model_class.human_attribute_name(:marca) %></th>
+      <th><%= model_class.human_attribute_name(:modelo) %></th>
+      <th><%= model_class.human_attribute_name(:ano) %></th>
+      <th><%= model_class.human_attribute_name(:quilometragem) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @veiculos.each do |veiculo| %>
       <tr>
+        <td><%= link_to veiculo.id, veiculo_path(veiculo) %></td>
         <td><%= veiculo.placa %></td>
         <td><%= veiculo.marca %></td>
         <td><%= veiculo.modelo %></td>
         <td><%= veiculo.ano %></td>
         <td><%= veiculo.quilometragem %></td>
-        <td><%= link_to 'Show', veiculo %></td>
-        <td><%= link_to 'Edit', edit_veiculo_path(veiculo) %></td>
-        <td><%= link_to 'Destroy', veiculo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l veiculo.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_veiculo_path(veiculo), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      veiculo_path(veiculo),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Veiculo', new_veiculo_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_veiculo_path,
+            :class => 'btn btn-primary' %>
