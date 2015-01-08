@@ -1,21 +1,19 @@
-<%- model_class = Veiculo -%>
+<%- model_class = MarcaVeiculo -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:modelo) %>:</strong></dt>
-  <dd><%= @veiculo.modelo %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:marca_veiculo_id) %>:</strong></dt>
-  <dd><%= @veiculo.marca_veiculo_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
+  <dd><%= @marca_veiculo.nome %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              veiculos_path, :class => 'btn btn-default'  %>
+              marca_veiculos_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_veiculo_path(@veiculo), :class => 'btn btn-default' %>
+              edit_marca_veiculo_path(@marca_veiculo), :class => 'btn btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              veiculo_path(@veiculo),
+              marca_veiculo_path(@marca_veiculo),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>

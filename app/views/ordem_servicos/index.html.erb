@@ -1,0 +1,54 @@
+<%- model_class = OrdemServico -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:numero) %></th>
+      <th><%= model_class.human_attribute_name(:data) %></th>
+      <th><%= model_class.human_attribute_name(:valor) %></th>
+      <th><%= model_class.human_attribute_name(:placa) %></th>
+      <th><%= model_class.human_attribute_name(:quilometragem) %></th>
+      <th><%= model_class.human_attribute_name(:garantia) %></th>
+      <th><%= model_class.human_attribute_name(:pecas) %></th>
+      <th><%= model_class.human_attribute_name(:descricao) %></th>
+      <th><%= model_class.human_attribute_name(:veiculo_id) %></th>
+      <th><%= model_class.human_attribute_name(:cliente_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ordem_servicos.each do |ordem_servico| %>
+      <tr>
+        <td><%= link_to ordem_servico.id, ordem_servico_path(ordem_servico) %></td>
+        <td><%= ordem_servico.numero %></td>
+        <td><%= ordem_servico.data %></td>
+        <td><%= ordem_servico.valor %></td>
+        <td><%= ordem_servico.placa %></td>
+        <td><%= ordem_servico.quilometragem %></td>
+        <td><%= ordem_servico.garantia %></td>
+        <td><%= ordem_servico.pecas %></td>
+        <td><%= ordem_servico.descricao %></td>
+        <td><%= ordem_servico.veiculo_id %></td>
+        <td><%= ordem_servico.cliente_id %></td>
+        <td><%=l ordem_servico.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_ordem_servico_path(ordem_servico), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      ordem_servico_path(ordem_servico),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_ordem_servico_path,
+            :class => 'btn btn-primary' %>

@@ -1,15 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  placa: MyString
-  marca: MyString
   modelo: MyString
-  ano: 2015-01-06
-  quilometragem: MyString
+  marca_veiculo_id: 1
 
 two:
-  placa: MyString
-  marca: MyString
   modelo: MyString
-  ano: 2015-01-06
-  quilometragem: MyString
+  marca_veiculo_id: 1

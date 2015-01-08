@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107123425) do
+ActiveRecord::Schema.define(version: 20150107021826) do
 
   create_table "clientes", force: true do |t|
     t.string   "nome_cliente"
@@ -35,23 +35,22 @@ ActiveRecord::Schema.define(version: 20150107123425) do
     t.string   "numero"
     t.string   "data"
     t.string   "valor"
-    t.string   "veiculo"
     t.string   "placa"
     t.string   "quilometragem"
     t.string   "garantia"
     t.string   "pecas"
     t.string   "descricao"
+    t.integer  "veiculo_id"
+    t.integer  "cliente_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "cliente"
-    t.integer  "id_veiculos"
   end
 
   create_table "veiculos", force: true do |t|
     t.string   "modelo"
+    t.integer  "marca_veiculo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "id_marca"
   end
 
 end

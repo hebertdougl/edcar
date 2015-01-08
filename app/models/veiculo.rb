@@ -1,4 +1,4 @@
 class Veiculo < ActiveRecord::Base
-	has_one :marca_veiculo
-	belongs_to :ordem_servico
+	belongs_to :marca_veiculo
+	has_many   :ordem_servico
 end

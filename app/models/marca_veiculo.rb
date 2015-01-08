@@ -1,3 +1,3 @@
 class MarcaVeiculo < ActiveRecord::Base
-	belongs_to :veiculo
+	has_many :veiculo
 end

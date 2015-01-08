@@ -1,0 +1,37 @@
+<%- model_class = OrdemServico -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:numero) %>:</strong></dt>
+  <dd><%= @ordem_servico.numero %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:data) %>:</strong></dt>
+  <dd><%= @ordem_servico.data %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:valor) %>:</strong></dt>
+  <dd><%= @ordem_servico.valor %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:placa) %>:</strong></dt>
+  <dd><%= @ordem_servico.placa %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:quilometragem) %>:</strong></dt>
+  <dd><%= @ordem_servico.quilometragem %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:garantia) %>:</strong></dt>
+  <dd><%= @ordem_servico.garantia %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pecas) %>:</strong></dt>
+  <dd><%= @ordem_servico.pecas %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descricao) %>:</strong></dt>
+  <dd><%= @ordem_servico.descricao %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:veiculo_id) %>:</strong></dt>
+  <dd><%= @ordem_servico.veiculo_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cliente_id) %>:</strong></dt>
+  <dd><%= @ordem_servico.cliente_id %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              ordem_servicos_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_ordem_servico_path(@ordem_servico), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              ordem_servico_path(@ordem_servico),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

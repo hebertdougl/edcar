@@ -18,7 +18,7 @@ class VeiculosControllerTest < ActionController::TestCase
 
   test "should create veiculo" do
     assert_difference('Veiculo.count') do
-      post :create, veiculo: { ano: @veiculo.ano, marca: @veiculo.marca, modelo: @veiculo.modelo, placa: @veiculo.placa, quilometragem: @veiculo.quilometragem }
+      post :create, veiculo: { marca_veiculo_id: @veiculo.marca_veiculo_id, modelo: @veiculo.modelo }
     end
 
     assert_redirected_to veiculo_path(assigns(:veiculo))
@@ -35,7 +35,7 @@ class VeiculosControllerTest < ActionController::TestCase
   end
 
   test "should update veiculo" do
-    patch :update, id: @veiculo, veiculo: { ano: @veiculo.ano, marca: @veiculo.marca, modelo: @veiculo.modelo, placa: @veiculo.placa, quilometragem: @veiculo.quilometragem }
+    patch :update, id: @veiculo, veiculo: { marca_veiculo_id: @veiculo.marca_veiculo_id, modelo: @veiculo.modelo }
     assert_redirected_to veiculo_path(assigns(:veiculo))
   end
 

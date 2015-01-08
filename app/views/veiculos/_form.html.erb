@@ -16,20 +16,6 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :placa, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :placa, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:placa) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :marca, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :marca, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:marca) %>
-  </div>
-  <div class="form-group">
     <%= f.label :modelo, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :modelo, :class => 'form-control' %>
@@ -37,18 +23,11 @@
     <%=f.error_span(:modelo) %>
   </div>
   <div class="form-group">
-    <%= f.label :ano, :class => 'control-label col-lg-2' %>
+    <%= f.label :marca_veiculo_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :ano, :class => 'form-control' %>
+      <%= f.text_field :marca_veiculo_id, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:ano) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :quilometragem, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :quilometragem, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:quilometragem) %>
+    <%=f.error_span(:marca_veiculo_id) %>
   </div>
 
   <div class="form-group">
