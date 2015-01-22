@@ -5,6 +5,20 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <div class="navbar">
+  <div class="container">
+    <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar">ASA</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <!-- Everything in here gets hidden at 940px or less -->
+    <div class="navbar-collapse collapse">
+      <!-- menu items gets rendered here instead -->
+    </div>
+  </div>
+</div>
 </head>
 <body>
 
